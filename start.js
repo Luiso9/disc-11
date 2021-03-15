@@ -11,7 +11,7 @@ if (isThisGlitch) {
     http.createServer((req, res) => {
         const now = new Date().toLocaleString("en-US");
         res.end(`OK (200) - ${now}`);
-    }).listen(process.env.PORT);
+    }).listen(process.env.PORT || 5000);
 
     setInterval(() => {
         http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`);
